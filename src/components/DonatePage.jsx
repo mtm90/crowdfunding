@@ -15,7 +15,7 @@ const DonatePage = () => {
 
   const fetchDonations = async () => {
     try {
-      const response = await fetch("http://localhost:3000/api/donations");
+      const response = await fetch("https://server-topaz-eta-32.vercel.app/api/donations");
       if (!response.ok) {
         throw new Error("Network response was not ok");
       }
@@ -34,7 +34,7 @@ const DonatePage = () => {
   const handleDonate = async () => {
     if (amount > 0) {
       try {
-        const response = await fetch("http://localhost:3000/api/donate", {
+        const response = await fetch("https://server-topaz-eta-32.vercel.app/api/donate", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
