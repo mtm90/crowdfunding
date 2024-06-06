@@ -13,28 +13,28 @@ const DonatePage = () => {
     fetchDonations();
   }, []);
 
+  const SERVER_URL = 'http://localhost:3000'; // Update with your local server URL
+
+  // Use SERVER_URL for API requests
   const fetchDonations = async () => {
     try {
-      const response = await fetch("https://server-topaz-eta-32.vercel.app/api/donations");
+      const response = await fetch(`${SERVER_URL}/api/donations`);
       if (!response.ok) {
         throw new Error("Network response was not ok");
       }
       const data = await response.json();
       setDonations(data);
-      const totalDonations = data.reduce(
-        (acc, donation) => acc + donation.amount,
-        0
-      );
+      const totalDonations = data.reduce((acc, donation) => acc + donation.amount, 0);
       setTotal(totalDonations);
     } catch (error) {
       console.error("Failed to fetch donations:", error);
     }
   };
-
+  
   const handleDonate = async () => {
     if (amount > 0) {
       try {
-        const response = await fetch("https://server-topaz-eta-32.vercel.app/api/donate", {
+        const response = await fetch(`${SERVER_URL}/api/donate`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -64,7 +64,7 @@ const DonatePage = () => {
       setMessage("Please enter a valid donation amount.");
     }
   };
-
+  
   return (
     <main className="donate-page">
       <section className="intro">
