@@ -8,8 +8,6 @@ const DonatePage = () => {
   const [total, setTotal] = useState(0);
   const [message, setMessage] = useState("");
   const [donations, setDonations] = useState([]);
-  const API_URL = 'http://localhost:3000'; // Local server URL
-
 
   useEffect(() => {
     fetchDonations();
@@ -17,7 +15,7 @@ const DonatePage = () => {
 
   const fetchDonations = async () => {
     try {
-      const response = await fetch(`${API_URL}/api/donations`);
+      const response = await fetch("http://localhost:3000/api/donations");
       if (!response.ok) {
         throw new Error("Network response was not ok");
       }
@@ -34,9 +32,9 @@ const DonatePage = () => {
   };
 
   const handleDonate = async () => {
-    if (parseFloat(amount) > 0) {
+    if (amount > 0) {
       try {
-        const response = await fetch(`${API_URL}/api/donate`, {
+        const response = await fetch("http://localhost:3000/api/donate", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
