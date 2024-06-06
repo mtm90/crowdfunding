@@ -34,7 +34,7 @@ const DonatePage = () => {
   const handleDonate = async () => {
     if (amount > 0) {
       try {
-        const response = await fetch("http://localhost:3000/api/donate", {
+        const response = await fetch("https://crowdfunding-roan.vercel.app/donate", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
