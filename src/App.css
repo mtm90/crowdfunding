@@ -1,0 +1,495 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+  color: #333;
+  padding-top: 200px;
+}
+
+header {
+  background: linear-gradient(45deg, #4caf50, #81c784);
+  color: white;
+  padding: 1rem 0;
+  text-align: center;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  transition: all 0.3s;
+}
+
+header h1, header p {
+  font-family: "Titillium Web", sans-serif;
+  font-style: italic;
+  margin: 0;
+}
+
+header h1 {
+  font-weight: 700;
+  font-size: 4rem;
+  line-height: 1.2;
+}
+
+header p {
+  font-weight: 400;
+  font-size: 2rem;
+}
+
+header.shrunk {
+  padding: 0.5rem 0 1rem;
+}
+
+header nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin-bottom: 0;
+  display: flex;
+  justify-content: center;
+}
+
+header nav ul li {
+  margin: 0 1rem;
+  font-family: "Titillium Web", sans-serif;
+  font-weight: 500;
+}
+
+header nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: font-size 0.3s;
+}
+
+header.shrunk nav ul li a {
+  font-size: 1.5rem;
+}
+
+header .title-subtitle {
+  transition: opacity 0.3s;
+}
+
+header.shrunk .title-subtitle {
+  opacity: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+header nav ul li a:hover {
+  text-decoration: underline;
+}
+
+footer {
+  background: linear-gradient(45deg, #4caf50, #81c784);
+  color: white;
+  text-align: center;
+  padding: 0.2rem 0;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  font-family: "Titillium Web", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+main {
+  padding: 2rem;
+}
+
+.blog-page {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
+  gap: 2rem;
+  padding: 3rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.blog-card {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
+}
+
+.blog-card img {
+  width: 60%;
+  object-fit: cover;
+  margin: 1rem;
+}
+
+.blog-card-content {
+  padding: 1rem;
+}
+
+.blog-card h2 {
+  font-size: 1.5rem;
+  margin: 0;
+  color: #4caf50;
+}
+
+.blog-card p {
+  margin: 0.5rem 0;
+}
+
+.blog-card .read-more {
+  margin-top: auto;
+  text-align: center;
+}
+
+.blog-card .read-more a {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background: #4caf50;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+.blog-card .read-more a:hover {
+  background: #45a049;
+}
+
+.blog-post-page {
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
+}
+
+.blog-post-page p {
+  font-family: "Titillium Web", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+  font-size: 1.5rem;
+}
+
+.blog-post-page h1 {
+  font-size: 2em;
+  margin-bottom: 20px;
+  text-align: center;
+  background: linear-gradient(45deg, #4caf50, #81c784);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.image-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.image-container img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.content {
+  font-size: 1.2em;
+  line-height: 1.6;
+  padding-bottom: 30px;
+}
+
+.home-page {
+  margin: 0 auto;
+  padding: 2rem;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: url("../public/images/hero1.webp") no-repeat center center/cover;
+  color: white;
+  height: 100vh;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+  transition: background-image 4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.intro-home,
+.call-to-action {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.intro-home h2,
+.call-to-action h2 {
+  color: #4caf50;
+  font-family: "Titillium Web", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
+.intro-home p,
+.call-to-action p {
+  font-size: 1.5rem;
+  line-height: 1.6;
+  color: #333;
+  font-family: "Titillium Web", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.call-to-action-button {
+  background: white;
+  color: #4caf50;
+  border: 2px solid #4caf50;
+  padding: 0.5rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-bottom: 1rem; /* Add this line to increase space below the button */
+
+}
+
+.call-to-action-button:hover {
+  background: #4caf50;
+  color: white;
+}
+
+.highlights {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-bottom: 2rem;
+}
+
+.highlight {
+  width: 30%;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background: linear-gradient(135deg, #90f78c, #ddf2da);
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  color: #333;
+}
+
+.highlight h3 {
+  color: #4caf50;
+  margin-bottom: 0.5rem;
+  font-family: "Titillium Web", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
+.highlight p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: #333;
+  font-family: "Titillium Web", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.about-us-page, .donate-page {
+  margin: 0 auto;
+  padding: 2rem;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.about-us-page section,
+.donate-page section {
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-us-page h1,
+.about-us-page h2,
+.about-us-page h3,
+.donate-page h1,
+.donate-page h2 {
+  background: linear-gradient(45deg, #4caf50, #81c784);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: "Titillium Web", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+  font-size: 2rem;
+}
+
+.about-us-page p,
+.donate-page p {
+  font-size: 1.5rem;
+  line-height: 1.6;
+  font-family: "Titillium Web", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.about-us-page .intro,
+.about-us-page .mission,
+.about-us-page .values,
+.about-us-page .join-us,
+.donate-page .intro,
+.donate-page .donation-form,
+.donate-page .why-donate,
+.donate-page .contact {
+  margin-bottom: 2rem;
+  padding: 1rem;
+  background: linear-gradient(135deg, #90f78c, #ddf2da);
+  border-radius: 8px;
+  font-family: "Titillium Web", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+  font-size: 1.5rem;
+}
+
+.team-member {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.team-member img {
+  border-radius: 25%;
+  width: 25rem;
+  height: fit-content;
+}
+.team-member div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.team-member p {
+  margin-left: 1rem;
+  margin-bottom: 8rem;
+}
+
+
+.values ul {
+  list-style-type: none;
+  padding: 0;
+  font-size: 1.5rem;
+}
+
+.values ul li {
+  margin-bottom: 1rem;
+}
+
+.join-us a {
+  color: #4caf50;
+  text-decoration: none;
+}
+
+.join-us a:hover {
+  text-decoration: underline;
+}
+
+.donate-page .donation-form h2 {
+  margin-bottom: 1rem;
+  font-family: "Titillium Web", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
+.donate-page .donation-form input {
+  padding: 0.5rem;
+  font-size: 1.5rem;
+  border: 2px solid #4caf50;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+  font-family: "Titillium Web", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+  width: 18rem;
+}
+
+.donate-page .donation-form button {
+  background: #4caf50;
+  color: white;
+  border: none;
+  padding: 0.5rem 1.5rem;
+  font-size: 1.5rem;
+  border-radius: 4px;
+  margin: 1rem;
+  cursor: pointer;
+  font-family: "Titillium Web", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.donate-page .donation-form button:hover {
+  background: #45a049;
+}
+
+.donate-page .donation-form .message {
+  margin-top: 1rem;
+  color: #4caf50;
+  font-size: 1rem;
+}
+
+.donate-page .total-donations {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-family: "Titillium Web", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+}
+.donation-input {
+  display: contents;
+}
+.donations-list{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+strong {
+  color: #4caf50;
+}
+
+@media screen and (max-width: 480px) {
+  body {
+    padding-top: 270px;
+  }
+
+  .blog-page {
+    grid-template-columns: 1fr;
+  }
+
+  .highlight {
+    width: 100%;
+  }
+
+  .blog-post-page {
+    padding: 10px;
+  }
+
+  .blog-post-page h1 {
+    font-size: 1.5em;
+  }
+
+  .content {
+    font-size: 1em;
+  }
+
+  .image-container img {
+    max-width: 50%;
+    height: 10%;
+  }
+}
+@media screen and (max-width: 768px) {
+  .team-member {
+    flex-direction: column;
+  }
+}
