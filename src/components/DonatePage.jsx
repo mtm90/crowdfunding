@@ -13,7 +13,7 @@ const DonatePage = () => {
     fetchDonations();
   }, []);
 
-  const SERVER_URL = 'http://localhost:3000'; // Update with your local server URL
+  const SERVER_URL = "http://localhost:3000";
 
   // Use SERVER_URL for API requests
   const fetchDonations = async () => {
@@ -24,13 +24,16 @@ const DonatePage = () => {
       }
       const data = await response.json();
       setDonations(data);
-      const totalDonations = data.reduce((acc, donation) => acc + donation.amount, 0);
+      const totalDonations = data.reduce(
+        (acc, donation) => acc + donation.amount,
+        0
+      );
       setTotal(totalDonations);
     } catch (error) {
       console.error("Failed to fetch donations:", error);
     }
   };
-  
+
   const handleDonate = async () => {
     if (amount > 0) {
       try {
@@ -64,7 +67,7 @@ const DonatePage = () => {
       setMessage("Please enter a valid donation amount.");
     }
   };
-  
+
   return (
     <main className="donate-page">
       <section className="intro">

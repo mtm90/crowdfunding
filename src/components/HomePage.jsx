@@ -18,18 +18,22 @@ const HomePage = () => {
     ];
 
     const preloadImages = () => {
-      Promise.all(images.map((image) => {
-        return new Promise((resolve, reject) => {
-          const img = new Image();
-          img.src = image;
-          img.onload = resolve;
-          img.onerror = reject;
+      Promise.all(
+        images.map((image) => {
+          return new Promise((resolve, reject) => {
+            const img = new Image();
+            img.src = image;
+            img.onload = resolve;
+            img.onerror = reject;
+          });
+        })
+      )
+        .then(() => {
+          setImagesLoaded(true);
+        })
+        .catch((error) => {
+          console.error("Image preloading failed:", error);
         });
-      })).then(() => {
-        setImagesLoaded(true);
-      }).catch((error) => {
-        console.error("Image preloading failed:", error);
-      });
     };
 
     preloadImages();
