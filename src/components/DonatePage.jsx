@@ -22,8 +22,9 @@ const DonatePage = () => {
         throw new Error("Network response was not ok");
       }
       const data = await response.json();
-      setDonations(data);
-      const totalDonations = data.reduce(
+      const sortedDonations = data.sort((a, b) => b.amount - a.amount);
+      setDonations(sortedDonations);
+      const totalDonations = sortedDonations.reduce(
         (acc, donation) => acc + donation.amount,
         0
       );
@@ -52,6 +53,7 @@ const DonatePage = () => {
           throw new Error("Network response was not ok");
         }
         const data = await response.json();
+        // Add new donation to the beginning of the donations array
         setDonations([data, ...donations]);
         setTotal(total + parseFloat(amount));
         setMessage(`Thank you for your donation of $${amount}!`);
