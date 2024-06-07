@@ -18,7 +18,8 @@ header {
   transition: all 0.3s;
 }
 
-header h1, header p {
+header h1,
+header p {
   font-family: "Titillium Web", sans-serif;
   font-style: italic;
   margin: 0;
@@ -251,7 +252,6 @@ main {
   cursor: pointer;
   transition: background-color 0.3s ease;
   margin-bottom: 1rem; /* Add this line to increase space below the button */
-
 }
 
 .call-to-action-button:hover {
@@ -294,7 +294,8 @@ main {
   font-style: italic;
 }
 
-.about-us-page, .donate-page {
+.about-us-page,
+.donate-page {
   margin: 0 auto;
   padding: 2rem;
   background: #fff;
@@ -374,7 +375,6 @@ main {
   margin-bottom: 8rem;
 }
 
-
 .values ul {
   list-style-type: none;
   padding: 0;
@@ -447,7 +447,7 @@ main {
 .donation-input {
   display: contents;
 }
-.donations-list{
+.donations-list {
   display: flex;
   flex-direction: column;
   justify-content: center;

@@ -37,7 +37,7 @@ const HomePage = () => {
 
   useEffect(() => {
     if (imagesLoaded) {
-      const intervalId = setInterval(changeBackgroundImage, 8000);
+      const intervalId = setInterval(changeBackgroundImage, 6000);
       return () => clearInterval(intervalId);
     }
   }, [imagesLoaded]);
