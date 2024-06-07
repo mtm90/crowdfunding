@@ -13,9 +13,8 @@ const DonatePage = () => {
     fetchDonations();
   }, []);
 
-  const SERVER_URL = "http://localhost:3000";
+  const SERVER_URL = "https://server-ei7t.onrender.com/";
 
-  // Use SERVER_URL for API requests
   const fetchDonations = async () => {
     try {
       const response = await fetch(`${SERVER_URL}/api/donations`);
