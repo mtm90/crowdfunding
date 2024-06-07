@@ -1,3 +1,4 @@
+/* Global Styles */
 body {
   margin: 0;
   padding: 0;
@@ -6,6 +7,7 @@ body {
   padding-top: 200px;
 }
 
+/* Header Styles */
 header {
   background: linear-gradient(45deg, #4caf50, #81c784);
   color: white;
@@ -79,6 +81,7 @@ header nav ul li a:hover {
   text-decoration: underline;
 }
 
+/* Footer Styles */
 footer {
   background: linear-gradient(45deg, #4caf50, #81c784);
   color: white;
@@ -92,10 +95,12 @@ footer {
   font-style: italic;
 }
 
+/* Main Content Styles */
 main {
   padding: 2rem;
 }
 
+/* Blog Page Styles */
 .blog-page {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
@@ -156,6 +161,7 @@ main {
   background: #45a049;
 }
 
+/* Blog Post Page Styles */
 .blog-post-page {
   max-width: 800px;
   margin: auto;
@@ -196,6 +202,7 @@ main {
   padding-bottom: 30px;
 }
 
+/* Home Page Styles */
 .home-page {
   margin: 0 auto;
   padding: 2rem;
@@ -251,7 +258,7 @@ main {
   border-radius: 4px;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  margin-bottom: 1rem; /* Add this line to increase space below the button */
+  margin-bottom: 1rem;
 }
 
 .call-to-action-button:hover {
@@ -294,6 +301,7 @@ main {
   font-style: italic;
 }
 
+/* About Us Page Styles */
 .about-us-page,
 .donate-page {
   margin: 0 auto;
