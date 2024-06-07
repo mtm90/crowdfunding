@@ -13,7 +13,7 @@ const DonatePage = () => {
     fetchDonations();
   }, []);
 
-  const SERVER_URL = "https://server-ei7t.onrender.com/";
+  const SERVER_URL = "https://server-ei7t.onrender.com";
 
   const fetchDonations = async () => {
     try {
