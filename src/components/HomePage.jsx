@@ -109,8 +109,7 @@ const HomePage = () => {
         <h2>Get Involved</h2>
         <p>
           There are many ways to support our project. Whether you donate,
-          volunteer, or simply spread the word, every bit helps us reach our
-          goal.
+          volunteer, or simply spread the word, even the smallest donation can make a difference.
         </p>
         <button
           className="call-to-action-button"
