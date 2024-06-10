@@ -7,20 +7,10 @@ const DonatePage = () => {
   const [amount, setAmount] = useState("");
   const [total, setTotal] = useState(0);
   const [message, setMessage] = useState("");
-  const [donations, setDonations] = useState(
-    JSON.parse(localStorage.getItem("donations")) || []
-  );
+  const [donations, setDonations] = useState([]);
 
   useEffect(() => {
-    if (donations.length > 0) {
-      const totalDonations = donations.reduce(
-        (acc, donation) => acc + donation.amount,
-        0
-      );
-      setTotal(totalDonations);
-    } else {
-      fetchDonations();
-    }
+    fetchDonations();
   }, []);
 
   const SERVER_URL = "https://server-ei7t.onrender.com";
@@ -34,7 +24,6 @@ const DonatePage = () => {
       const data = await response.json();
       const sortedDonations = data.sort((a, b) => b.amount - a.amount);
       setDonations(sortedDonations);
-      localStorage.setItem("donations", JSON.stringify(sortedDonations));
       const totalDonations = sortedDonations.reduce(
         (acc, donation) => acc + donation.amount,
         0
@@ -65,9 +54,7 @@ const DonatePage = () => {
         }
         const data = await response.json();
         // Add new donation to the beginning of the donations array
-        const newDonations = [data, ...donations];
-        setDonations(newDonations);
-        localStorage.setItem("donations", JSON.stringify(newDonations));
+        setDonations([data, ...donations]);
         setTotal(total + parseFloat(amount));
         setMessage(`Thank you for your donation of $${amount}!`);
         setName("");
